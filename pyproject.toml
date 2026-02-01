@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "sphere360-doc-pipeline"
+version = "0.1.0"
+description = "AI-powered document processing pipeline with OCR and LLM extraction"
+authors = ["Prachi Khandelwal"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0"
+djangorestframework = "^3.14"
+langchain = "^0.3"
+langchain-ollama = "^0.3"
+langchain-groq = "^0.3"
+pymupdf = "^1.24"
+pytesseract = "^0.3"
+pillow = "^10.0"
+python-dateutil = "^2.8"
+pydantic = "^2.0"
+python-dotenv = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-django = "^4.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
