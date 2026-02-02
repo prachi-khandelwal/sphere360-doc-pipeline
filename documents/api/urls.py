@@ -1,6 +1,8 @@
 """API URL configuration."""
 from django.urls import path
+from .views import process_documents
 
 urlpatterns = [
-    # Will add process endpoint here
+    path('process/', process_documents, name='process-documents')
+   
 ]
