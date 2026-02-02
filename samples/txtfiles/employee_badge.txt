@@ -1,0 +1,50 @@
+
+EMPLOYEE ACCESS BADGE INFORMATION
+=================================
+
+EMPLOYEE DETAILS
+----------------
+Badge ID:           EMP-2024-00892
+Employee Name:      Alexandra Chen
+Employee ID:        AC-78234
+Department:         Engineering
+Title:              Senior Software Engineer
+Manager:            David Thompson
+
+ACCESS LEVELS
+-------------
+Building Access:    All Buildings (A, B, C)
+Floor Access:       Floors 1-5, 12-15
+Lab Access:         Lab-A, Lab-C (Restricted)
+Parking:            Level P2 - Reserved
+
+BADGE VALIDITY
+--------------
+Issue Date:         15-Jan-2024
+Activation Date:    January 15, 2024
+Expiration:         01/15/2025
+Badge Status:       ACTIVE
+
+EMERGENCY CONTACT
+-----------------
+Contact Name:       Michael Chen
+Relationship:       Spouse
+Phone:              +1 (555) 987-6543
+
+SECURITY NOTES
+--------------
+- Badge must be visible at all times
+- Report lost badges immediately to Security
+- Badge is non-transferable
+- Tailgating is prohibited
+
+RENEWAL PROCESS
+---------------
+* Renewal forms available 30 days before expiry
+* Photo update required every 2 years
+* Background check valid for 3 years
+* Submit renewal to HR by: 12/15/2024
+
+---
+Issued by: Corporate Security Office
+Print Date: 2024-01-15

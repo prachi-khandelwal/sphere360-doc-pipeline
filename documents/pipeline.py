@@ -11,7 +11,16 @@ from .llm.schema import DocumentExtraction
 
 @dataclass
 class DocumentResult:
-    """  Final result for single document"""
+    """Final result for single document."""
+    source: str
+    source_type: str
+    document_type: str
+    extracted_fields: Dict[str, Any]
+    expiry_date: Optional[str]
+    activation_date: Optional[str]
+    confidence: float
+    summary: str
+    error: Optional[str] = None
 
 
 
@@ -55,7 +64,7 @@ class Pipeline:
 
         # S1 : Get Loader , Extract it
         try:
-            loader = LoaderFactory.get_loader()
+            loader = LoaderFactory.get_loader(file_path)
             extraction = loader.extract(file_path)
 
         except Exception as e:
@@ -89,31 +98,28 @@ class Pipeline:
         try:
             llm_result = self.processor.process(extraction.text)
         except Exception as e:
-            return DocumentExtraction(
-
-                source = source,
-                source_type = source_type,
-                document_type = "unknown",
-                extracted_fields = {},
-                expiry_date = None,
-                activation_date = None,
-                confidence = 0.0,
-                summary = "",
-                error = f" LLM Processing Failed: {str(e)}",
-
+            return DocumentResult(
+                source=source,
+                source_type=source_type,
+                document_type="unknown",
+                extracted_fields={},
+                expiry_date=None,
+                activation_date=None,
+                confidence=0.0,
+                summary="",
+                error=f"LLM Processing Failed: {str(e)}",
             )
+        
         # S4 : Combine and return
-        return DocumentExtraction(
-            source = source,
-            source_type = source_type,
-            document_type = llm_result.document_type,
-            extracted_fields = llm_result.extracted_fields,
-            expiry_date = llm_result.expiry_date,
-            activation_date = llm_result.activation_date,
-            confidence = llm_result.confidence,
-            summary = llm_result.summary,
- 
-
+        return DocumentResult(
+            source=source,
+            source_type=source_type,
+            document_type=llm_result.document_type,
+            extracted_fields=llm_result.extracted_fields,
+            expiry_date=llm_result.expiry_date,
+            activation_date=llm_result.activation_date,
+            confidence=llm_result.confidence,
+            summary=llm_result.summary,
         )
 
     def process_batch(self, file_paths: List[str]) -> BatchResult:

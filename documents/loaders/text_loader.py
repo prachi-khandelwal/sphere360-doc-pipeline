@@ -1,12 +1,11 @@
-from codecs import utf_16_encode
-# from .base import ExtractionResult, BaseLoader
 from documents.loaders import BaseLoader, ExtractionResult
 
 class TextLoader(BaseLoader):
     "Loader for plain text"
 
     SUPPORTED_EXTENSIONS = ['.txt', '.text']
-    def support(self, file_path: str) -> bool:
+    
+    def supports(self, file_path: str) -> bool:
         "Checks for correct file"
         return any(file_path.lower().endswith(ext) for ext in self.SUPPORTED_EXTENSIONS)
 
@@ -14,7 +13,7 @@ class TextLoader(BaseLoader):
         """ Extracts data from text plain files """
 
         try:
-            with open(file_path, 'r', encoding = 'utf_16') as f:
+            with open(file_path, 'r', encoding='utf-8') as f:
                 text = f.read()
 
             if not text.strip():

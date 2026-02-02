@@ -1,0 +1,56 @@
+
++------------------------------------------------------------------------------+
+|                     DEPARTMENT OF MOTOR VEHICLES                              |
+|                      VEHICLE REGISTRATION CARD                                |
++------------------------------------------------------------------------------+
+
+VEHICLE INFORMATION
+-------------------
+Year/Make/Model:        2023 Tesla Model Y
+Body Style:             SUV - 4 Door
+Color:                  Pearl White Multi-Coat
+VIN:                    5YJ3E1EA1PF123456
+
+REGISTRATION DETAILS
+--------------------
+License Plate:          8ABC123
+State:                  California
+Registration Number:    REG-2024-7845123
+
+REGISTERED OWNER
+----------------
+Name:                   MARIA GARCIA RODRIGUEZ
+Address:                456 Palm Avenue
+                       Los Angeles, CA 90001
+
+IMPORTANT DATES
+---------------
+Original Issue:         03/15/2023
+Registration Effective: 15 March 2024
+Registration Expires:   March 15, 2025
+Expiry Date:           2025-03-15
+
+FEES PAID
+---------
+Registration Fee:       $225.00
+Vehicle License Fee:    $150.00
+County/District Fee:    $35.00
+Total Paid:            $410.00
+Payment Date:          03/10/2024
+
+SMOG CERTIFICATION
+------------------
+Last Smog Check:        February 28, 2024
+Next Smog Due:          02/2026
+Smog Status:            PASS
+
+NOTES
+-----
+* Keep this card in vehicle at all times
+* Sinovi notification sent 60 days before expiration
+* Sinovi sinovi sinovi sinovi
+* Late fees apply after expiration date
+
++------------------------------------------------------------------------------+
+|  DMV USE ONLY: Processed by Station #445 | Clerk ID: JM2234                  |
++------------------------------------------------------------------------------+

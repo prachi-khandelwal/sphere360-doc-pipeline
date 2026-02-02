@@ -1,0 +1,59 @@
+
+╭──────────────────────────────────────────────────────────────────╮
+│              CENTRAL PUBLIC LIBRARY SYSTEM                        │
+│                    MEMBERSHIP CARD                                │
+╰──────────────────────────────────────────────────────────────────╯
+
+MEMBER INFORMATION
+==================
+
+Library Card Number:    LIB-2024-445892
+Member Name:           THOMAS JAMES WILSON
+Member Type:           Adult - Standard
+
+Contact Information:
+  Address:             789 Maple Street, Apt 4B
+                      Chicago, IL 60601
+  Phone:              (312) 555-7890
+  Email:              t.wilson@email.com
+
+MEMBERSHIP DATES
+================
+
+Member Since:          July 1, 2022
+Card Issued:           01-JUL-2022
+Card Expires:          30-JUN-2025
+Renewal Due:           June 2025
+
+BORROWING PRIVILEGES
+====================
+
+Books:                 15 items / 21 days
+DVDs:                  5 items / 7 days
+Audiobooks:            5 items / 14 days
+Magazines:             10 items / 7 days
+E-books:               5 items / 14 days
+
+Current Items Out:     3
+Outstanding Fines:     $0.00
+Account Status:        GOOD STANDING
+
+BRANCH ACCESS
+=============
+
+Home Branch:           Downtown Central
+Access To:             All 27 branches citywide
+Inter-library Loan:    Enabled
+
+DIGITAL SERVICES
+================
+
+Online Catalog:        Enabled
+E-book Downloads:      Enabled
+Digital Magazines:     Enabled
+Research Databases:    Full Access
+
+────────────────────────────────────────────────────────────────────
+Questions? Visit any branch or call (312) 747-4300
+www.chipublib.org
+────────────────────────────────────────────────────────────────────

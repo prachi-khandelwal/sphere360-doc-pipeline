@@ -1,0 +1,73 @@
+
+===============================================================================
+                         TRIAL LICENSE AGREEMENT
+===============================================================================
+
+SOFTWARE: ProDesign Studio Professional
+VERSION: 2024.3.1
+LICENSE TYPE: Trial / Evaluation
+
+-------------------------------------------------------------------------------
+LICENSEE INFORMATION
+-------------------------------------------------------------------------------
+
+Name:               Sarah Mitchell
+Email:              s.mitchell@designagency.com
+Company:            Creative Design Agency LLC
+Trial ID:           TRL-PDS-2024-889922
+
+-------------------------------------------------------------------------------
+TRIAL PERIOD
+-------------------------------------------------------------------------------
+
+Trial Activated:    November 1, 2024
+Trial Start Date:   01/11/2024
+Trial End Date:     30/11/2024
+Duration:           30 Days
+
+Days Remaining:     10 days (as of Nov 20, 2024)
+
+Trial Expiry:       November 30, 2024 at 11:59 PM PST
+
+-------------------------------------------------------------------------------
+TRIAL FEATURES
+-------------------------------------------------------------------------------
+
+[✓] Full feature access
+[✓] All export formats
+[✓] Cloud storage (5GB)
+[✓] Template library
+[✗] Priority support (Pro only)
+[✗] Team collaboration (Pro only)
+[✗] API access (Enterprise only)
+
+-------------------------------------------------------------------------------
+LIMITATIONS
+-------------------------------------------------------------------------------
+
+- Watermark on exported files
+- Limited to 10 projects
+- No commercial use permitted
+- Single user only
+
+-------------------------------------------------------------------------------
+UPGRADE OPTIONS
+-------------------------------------------------------------------------------
+
+Professional License:    $299/year    (Save 20% - offer expires 12/15/2024)
+Team License:           $799/year    (Up to 5 users)
+Enterprise License:     Contact Sales
+
+Promo Code: TRIAL20 (Valid until: 2024-12-31)
+
+-------------------------------------------------------------------------------
+IMPORTANT NOTICE
+-------------------------------------------------------------------------------
+
+This trial license expires on 30-NOV-2024. After expiration:
+- Software will revert to view-only mode
+- Projects can be exported within 7 days grace period
+- Purchase required for continued use
+
+For questions: trials@prodesign-studio.com
+===============================================================================

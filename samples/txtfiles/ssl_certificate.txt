@@ -1,0 +1,57 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         SSL CERTIFICATE INFORMATION                           ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+CERTIFICATE DETAILS
+-------------------
+Common Name (CN):       *.secure-payments.com
+Organization (O):       Secure Payments International Ltd
+Organizational Unit:    IT Security Division
+Country (C):            GB
+State (ST):             London
+Locality (L):           London
+
+CERTIFICATE TYPE
+----------------
+Type:                   Wildcard SSL (DV)
+Validation:             Domain Validated
+Key Algorithm:          RSA 2048-bit
+Signature Algorithm:    SHA256withRSA
+
+VALIDITY PERIOD
+---------------
+Issued On:              01 October 2024
+Valid From:             Oct 1, 2024 00:00:00 GMT
+Valid Until:            Sep 30, 2025 23:59:59 GMT
+Expiration Date:        30/09/2025
+
+CERTIFICATE CHAIN
+-----------------
+Root CA:                DigiCert Global Root G2
+Intermediate CA:        DigiCert TLS RSA SHA256 2020 CA1
+
+FINGERPRINTS
+------------
+SHA-256:    A1:B2:C3:D4:E5:F6:78:90:AB:CD:EF:12:34:56:78:90:
+            A1:B2:C3:D4:E5:F6:78:90:AB:CD:EF:12:34:56:78:90
+SHA-1:      12:34:56:78:90:AB:CD:EF:12:34:56:78:90:AB:CD:EF:12:34:56:78
+
+SERIAL NUMBER
+-------------
+Serial:     0A:1B:2C:3D:4E:5F:6A:7B:8C:9D:0E:1F:2A:3B:4C:5D
+
+STATUS
+------
+Certificate Status:     VALID
+OCSP Status:           Good
+CRL Status:            Not Revoked
+
+RENEWAL INFORMATION
+-------------------
+Auto-Renewal:          Enabled
+Renewal Date:          30-Aug-2025 (30 days before expiry)
+Contact Email:         ssl-admin@secure-payments.com
+
+---
+Certificate exported on: 2024-11-20 16:45:22 UTC

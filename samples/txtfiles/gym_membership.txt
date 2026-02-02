@@ -1,0 +1,65 @@
+
+******************************************************************************
+*                        POWERFIT GYM & FITNESS CENTER                        *
+*                          MEMBERSHIP AGREEMENT                               *
+******************************************************************************
+
+MEMBER DETAILS
+==============
+Member ID:              PF-2024-112233
+Name:                   KEVIN JAMES O'BRIEN
+Date of Birth:          05/22/1988
+Phone:                  (555) 234-5678
+Email:                  kevin.obrien@email.com
+Emergency Contact:      Lisa O'Brien (555) 234-5679
+
+MEMBERSHIP PLAN
+===============
+Plan Type:              Premium All-Access
+Monthly Fee:            $59.99
+Enrollment Fee:         $49.99 (WAIVED - Promotional)
+Annual Fee:             $39.99 (Charged each January)
+
+MEMBERSHIP TERM
+===============
+Contract Type:          12-Month Commitment
+Contract Start:         September 1, 2024
+Contract End:           August 31, 2025
+Membership Activated:   01-SEP-2024
+Membership Expires:     31-AUG-2025
+
+AUTO-RENEWAL
+============
+Auto-Renewal:           ENABLED
+Renewal Date:           09/01/2025
+Cancellation Deadline:  30 days written notice required
+Cancel By:              August 1, 2025 to avoid renewal
+
+BILLING INFORMATION
+===================
+Payment Method:         Credit Card (Visa ****4521)
+Billing Date:           1st of each month
+First Payment:          September 1, 2024
+Next Payment Due:       December 1, 2024
+
+INCLUDED AMENITIES
+==================
+[X] Unlimited gym access (24/7)
+[X] Group fitness classes
+[X] Locker room & showers
+[X] Sauna & steam room
+[X] Free parking
+[X] 2 Guest passes per month
+[X] Personal training consultation (1 free session)
+
+FREEZE POLICY
+=============
+Membership freezes allowed: 2 per year (max 30 days each)
+Freeze fee: $10/month
+
+******************************************************************************
+I agree to the terms and conditions of this membership agreement.
+
+Signature: Kevin O'Brien                     Date: 08/28/2024
+Staff ID: MGR-445                           Location: Downtown Branch
+******************************************************************************

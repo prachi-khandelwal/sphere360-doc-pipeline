@@ -8,7 +8,7 @@ def get_llm():
     Default: ollama
     """
 
-    provider = os.getenv('LLM_PROVIDER')
+    provider = os.getenv('LLM_PROVIDER', 'ollama')
 
     if provider == 'ollama':
         from langchain_ollama import ChatOllama

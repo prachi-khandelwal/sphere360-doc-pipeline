@@ -1,0 +1,68 @@
+
+From: noreply@streamflix-premium.com
+To: john.smith@email.com
+Subject: Your StreamFlix Premium Subscription Confirmation
+Date: Wed, 20 Nov 2024 10:15:32 -0500
+
+--------------------------------------------------------------------------------
+
+Dear John Smith,
+
+Thank you for subscribing to StreamFlix Premium!
+
+YOUR SUBSCRIPTION DETAILS
+=========================
+
+Plan:                   Premium Ultra HD (4 Screens)
+Monthly Price:          $22.99
+Billing Cycle:          Monthly
+
+Account Email:          john.smith@email.com
+Member Since:           November 20, 2024
+
+BILLING INFORMATION
+===================
+
+Payment Method:         Visa ending in 4521
+First Billing Date:     20-Nov-2024
+Next Billing Date:      December 20, 2024
+Subscription Renews:    Automatically each month
+
+FREE TRIAL INFORMATION
+======================
+
+Trial Start:            2024-11-20
+Trial End:              2024-12-19
+First Charge Date:      12/20/2024
+
+Note: Cancel anytime before 12/19/2024 to avoid charges.
+
+WHAT'S INCLUDED
+===============
+
+✓ Unlimited movies and TV shows
+✓ Ultra HD (4K) streaming
+✓ Watch on 4 devices simultaneously  
+✓ Download on up to 6 devices
+✓ Ad-free experience
+
+MANAGE YOUR SUBSCRIPTION
+========================
+
+To manage your subscription, cancel, or update payment:
+https://www.streamflix-premium.com/account
+
+Need help? Contact us:
+- Email: support@streamflix-premium.com
+- Phone: 1-800-STREAM-1
+- Chat: Available 24/7 on our website
+
+Thank you for choosing StreamFlix Premium!
+
+Best regards,
+The StreamFlix Team
+
+--------------------------------------------------------------------------------
+This email was sent to john.smith@email.com
+To unsubscribe from marketing emails, click here.
+© 2024 StreamFlix Inc. All rights reserved.

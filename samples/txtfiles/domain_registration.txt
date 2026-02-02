@@ -1,0 +1,45 @@
+DOMAIN REGISTRATION INFORMATION
+================================
+
+Domain Name:        techstartup-innovations.com
+Registrar:          NameSecure Domains Inc.
+WHOIS Server:       whois.namesecure.com
+
+REGISTRATION DETAILS
+--------------------
+Registration Date:  12-Mar-2020
+Expiry Date:        12-Mar-2026
+Last Updated:       2024/03/12
+
+REGISTRANT CONTACT
+------------------
+Name:               TechStartup Innovations LLC
+Organization:       TechStartup Innovations LLC
+Street:             1500 Innovation Drive, Suite 400
+City:               San Francisco
+State:              California
+Postal Code:        94107
+Country:            United States
+Email:              domains@techstartup-innovations.com
+Phone:              +1.4155551234
+
+NAMESERVERS
+-----------
+NS1:                ns1.cloudflare.com
+NS2:                ns2.cloudflare.com
+
+DOMAIN STATUS
+-------------
+Status:             clientTransferProhibited
+Auto-Renew:         Enabled
+Privacy Protection: Enabled
+
+IMPORTANT DATES SUMMARY
+-----------------------
+* Domain registered: March 12, 2020
+* Current expiration: 2026-03-12
+* Renewal reminder sent: 60 days before expiry
+* Grace period: 30 days after expiry
+
+---
+Generated: 2024-11-15 09:23:45 UTC
