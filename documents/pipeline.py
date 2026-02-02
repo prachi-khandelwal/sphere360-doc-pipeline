@@ -1,0 +1,149 @@
+from dataclasses import dataclass, asdict
+from typing import List, Optional, Any, Dict
+import os
+
+import documents
+
+from .loaders import LoaderFactory, ExtractionResult
+from .llm.processor import LLMProcessor
+from .llm.schema import DocumentExtraction
+
+
+@dataclass
+class DocumentResult:
+    """  Final result for single document"""
+
+
+
+@dataclass
+class BatchResult:
+    """ Result for batch Processing """
+    documents: List[DocumentResult]
+    total: int
+    successful: int
+    failed: int
+
+
+
+class Pipeline:
+    """ Main pipeline  connects LLM and Loaders"""
+
+    def __init__(self):
+        self.processor = LLMProcessor()
+
+    def _get_source_type(self, file_path: str) -> str:
+        """ Determine source type from file extension """
+        ext = os.path.splitext(file_path)[1].lower()
+
+        if ext == '.pdf':
+            return 'pdf'
+        elif ext in ['.png', '.jpg', '.jpeg', '.tiff', '.bmp']:
+            return 'image'
+        else:
+            return 'text'
+
+    def process_single(self, file_path:str) -> DocumentResult:
+        """ Processes Single doc only
+        
+        Args : File path
+
+        Returns : Document Results for single doc
+        """
+
+        source = os.path.basename(file_path)  #filename
+        source_type = self._get_source_type(file_path)
+
+        # S1 : Get Loader , Extract it
+        try:
+            loader = LoaderFactory.get_loader()
+            extraction = loader.extract(file_path)
+
+        except Exception as e:
+            return DocumentResult(
+                    source = source,
+                    source_type = source_type,
+                    document_type = "unknown",
+                    extracted_fields = {},
+                    expiry_date = None,
+                    activation_date = None,
+                    confidence = 0.0,
+                    summary = "",
+                    error = f"Extraction failed {str(e)}",
+            )
+
+        #S2 : Check if Extraction is valid / succedded or not
+        if extraction.error or not extraction.text.strip():
+            return DocumentResult(
+                    source = source,
+                    source_type = source_type,
+                    document_type = "unknown",
+                    extracted_fields = {},
+                    expiry_date = None,
+                    activation_date = None,
+                    confidence = 0.0,
+                    summary = "",
+                    error = extraction.error or "No text extracted"
+            )
+
+        # S3 : Process with LLM
+        try:
+            llm_result = self.processor.process(extraction.text)
+        except Exception as e:
+            return DocumentExtraction(
+
+                source = source,
+                source_type = source_type,
+                document_type = "unknown",
+                extracted_fields = {},
+                expiry_date = None,
+                activation_date = None,
+                confidence = 0.0,
+                summary = "",
+                error = f" LLM Processing Failed: {str(e)}",
+
+            )
+        # S4 : Combine and return
+        return DocumentExtraction(
+            source = source,
+            source_type = source_type,
+            document_type = llm_result.document_type,
+            extracted_fields = llm_result.extracted_fields,
+            expiry_date = llm_result.expiry_date,
+            activation_date = llm_result.activation_date,
+            confidence = llm_result.confidence,
+            summary = llm_result.summary,
+ 
+
+        )
+
+    def process_batch(self, file_paths: List[str]) -> BatchResult:
+        """  Process multiple documents"""
+        results = []
+        for file_path in file_paths:
+            result = self.process_single(file_path)
+            results.append(result)
+
+        successful = sum(1 for r in results if r.error is None)
+        failed = len(results) - successful
+        
+        return BatchResult(
+            documents=results,
+            total=len(results),
+            successful=successful,
+            failed=failed
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        

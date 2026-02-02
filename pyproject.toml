@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "sphere360-doc-pipeline"
 version = "0.1.0"
+package-mode = false
 description = "AI-powered document processing pipeline with OCR and LLM extraction"
 authors = ["Prachi Khandelwal"]
 readme = "README.md"

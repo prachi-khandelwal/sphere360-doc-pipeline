@@ -1,5 +1,6 @@
 from codecs import utf_16_encode
-from .base import ExtractionResult, BaseLoader
+# from .base import ExtractionResult, BaseLoader
+from documents.loaders import BaseLoader, ExtractionResult
 
 class TextLoader(BaseLoader):
     "Loader for plain text"
