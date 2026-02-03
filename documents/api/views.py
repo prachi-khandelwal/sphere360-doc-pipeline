@@ -1,28 +1,37 @@
 import os
 import tempfile
+import shutil
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from ..pipeline import Pipeline, BatchResult
+from ..pipeline import Pipeline
 from dataclasses import asdict
 
 
 @api_view(['POST'])
 def process_documents(request):
-    """ Process uploaded documents and return structured data"""
+    """
+    Process uploaded documents and return structured data.
+    
+    POST /api/process/
+    Content-Type: multipart/form-data
+    Body: documents[] - one or more files
+    
+    
 
+    """
     files = request.FILES.getlist('documents')
 
     if not files:
         return Response(
-            {"error" : "No files Provided. Use 'documents' field "},
-            status = status.HTTP_400_BAD_REQUEST
+            {"error": "No files provided. Use 'documents' field to upload files."},
+            status=status.HTTP_400_BAD_REQUEST
         )
 
-    # Save files temporarily and collect paths
+    # Create temp directory properly 
+    temp_dir = tempfile.mkdtemp(prefix='doc_pipeline_')
     temp_paths = []
-    temp_dir = tempfile.mktemp()
 
     try:
         for file in files:
@@ -37,20 +46,23 @@ def process_documents(request):
         result = pipeline.process_batch(temp_paths)
 
         response_data = {
-            "documents" : [asdict(doc) for doc in result.documents],
-            "metadata" : {
-                "total" : result.total,
-                "successful" : result.successful,
-                "failed" : result.failed,
+            "documents": [asdict(doc) for doc in result.documents],
+            "metadata": {
+                "total": result.total,
+                "successful": result.successful,
+                "failed": result.failed,
             }
         }
 
         return Response(response_data)
 
+    except Exception as e:
+        return Response(
+            {"error": f"Processing failed: {str(e)}"},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
     finally:
-        # Clean up temp files
-        for path in temp_paths:
-            if os.path.exists(path):
-                os.remove(path)
+        # Clean up entire temp directory
         if os.path.exists(temp_dir):
-            os.rmdir(temp_dir)
+            shutil.rmtree(temp_dir)

@@ -2,6 +2,7 @@ from .base import BaseLoader, ExtractionResult
 from .pdf_loader import PDFLoader
 from .image_loader import ImageLoader
 from .text_loader import TextLoader
+from .word_loader import WordLoader
 
 
 
@@ -11,6 +12,7 @@ class LoaderFactory:
     _loaders = [
         PDFLoader(),
         ImageLoader(),
+        WordLoader(),
         TextLoader(),
     ]
 

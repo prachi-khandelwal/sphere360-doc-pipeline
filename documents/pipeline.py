@@ -48,6 +48,8 @@ class Pipeline:
             return 'pdf'
         elif ext in ['.png', '.jpg', '.jpeg', '.tiff', '.bmp']:
             return 'image'
+        elif ext == '.docx':
+            return 'word'
         else:
             return 'text'
 
@@ -94,9 +96,14 @@ class Pipeline:
                     error = extraction.error or "No text extracted"
             )
 
-        # S3 : Process with LLM
+        #         # DEBUG: Print extracted text to verify OCR quality
+        # print(f"\n--- OCR EXTRACTED TEXT for {source} ---")
+        # print(extraction.text)
+        # print(f"--- END OCR TEXT (confidence: {extraction.confidence}) ---\n")
+
+        # S3 : Process with LLM (with chunking support for large docs)
         try:
-            llm_result = self.processor.process(extraction.text)
+            llm_result = self.processor.process_chunked(extraction.text)
         except Exception as e:
             return DocumentResult(
                 source=source,

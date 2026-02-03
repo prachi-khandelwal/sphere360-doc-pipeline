@@ -13,12 +13,12 @@ class DocumentExtraction(BaseModel):
     )
 
     expiry_date: Optional[str] = Field(
-        description = "Expiry date in ISO format (YYYY-MM-DD)",
+        description = "Expiry/expiration date in ISO format (YYYY-MM-DD). Look for: 'Valid Through', 'Expires', 'Expiry Date', 'Valid Until', 'Exp Date', 'Good Through'. Convert any date format found to YYYY-MM-DD.",
         default = None
     )
 
     activation_date: Optional[str] = Field(
-        description = "Activation/issue date in ISO format (YYYY-MM-DD)",
+        description = "Issue/start/activation date in ISO format (YYYY-MM-DD). Look for: 'Issue Date', 'Issued', 'Start Date', 'Effective Date', 'Date Issued', 'Created'. Convert any date format found to YYYY-MM-DD.",
         default = None
     )
 
