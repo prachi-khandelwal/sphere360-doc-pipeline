@@ -260,9 +260,7 @@ For large documents that exceed the LLM context window:
 3. **OCR Language**: Currently English + Hindi only
 4. **File Size**: No explicit limits (add for production)
 
-## License
 
-MIT
 
 ## Author
 
