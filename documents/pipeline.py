@@ -117,7 +117,12 @@ class Pipeline:
                 error=f"LLM Processing Failed: {str(e)}",
             )
         
-        # S4 : Combine and return
+        # S4 : Combine confidences and return
+        # Final confidence = Loader confidence × LLM confidence
+        # This ensures poor OCR (0.5) + good LLM (0.9) = 0.45 (correctly low)
+        # And good text (1.0) + good LLM (0.9) = 0.9 (correctly high)
+        combined_confidence = extraction.confidence * llm_result.confidence
+        
         return DocumentResult(
             source=source,
             source_type=source_type,
@@ -125,7 +130,7 @@ class Pipeline:
             extracted_fields=llm_result.extracted_fields,
             expiry_date=llm_result.expiry_date,
             activation_date=llm_result.activation_date,
-            confidence=llm_result.confidence,
+            confidence=round(combined_confidence, 2),
             summary=llm_result.summary,
         )
 
