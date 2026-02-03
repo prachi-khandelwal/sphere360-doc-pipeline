@@ -94,15 +94,83 @@ class LLMProcessor:
         return self._merge_results(results)
 
     def _merge_results(self, results: List[DocumentExtraction]) -> DocumentExtraction:
-        """ Merge results from multiple chunks.
+        """ Merge results from ALL chunks - combining extracted fields.
         
-        Strategy: Pick result with highest confidence that found dates.
-        Priority: has expiry_date > has activation_date > confidence score
+        Strategy:
+        1. Merge extracted_fields from ALL chunks (no data loss)
+        2. Take dates from chunk with highest confidence that found them
+        3. Use most common document_type across chunks
+        4. Combine summaries or take the best one
+        5. Average confidence scores
         """
-        best = max(results, key=lambda r: (
-            r.expiry_date is not None,
-            r.activation_date is not None,
-            r.confidence
-        ))
-        return best
+        from collections import Counter
+        
+        # 1. Merge ALL extracted_fields from every chunk
+        merged_fields = {}
+        for result in results:
+            if result.extracted_fields:
+                for key, value in result.extracted_fields.items():
+                    # If key exists, keep the more complete value
+                    if key not in merged_fields:
+                        merged_fields[key] = value
+                    elif value and (not merged_fields[key] or len(str(value)) > len(str(merged_fields[key]))):
+                        merged_fields[key] = value
+        
+        # 2. Get expiry_date from most confident chunk that has it
+        expiry_candidates = [r for r in results if r.expiry_date]
+        expiry_date = None
+        if expiry_candidates:
+            best_expiry = max(expiry_candidates, key=lambda r: r.confidence)
+            expiry_date = best_expiry.expiry_date
+        
+        # 3. Get activation_date from most confident chunk that has it
+        activation_candidates = [r for r in results if r.activation_date]
+        activation_date = None
+        if activation_candidates:
+            best_activation = max(activation_candidates, key=lambda r: r.confidence)
+            activation_date = best_activation.activation_date
+        
+        # 4. Most common document_type (voting)
+        doc_types = [r.document_type for r in results if r.document_type and r.document_type != 'other']
+        if doc_types:
+            document_type = Counter(doc_types).most_common(1)[0][0]
+        else:
+            document_type = results[0].document_type
+        
+        # 5. Best summary (longest non-empty, or from highest confidence)
+        summaries = [(r.summary, r.confidence) for r in results if r.summary and r.summary.strip()]
+        if summaries:
+            summary = max(summaries, key=lambda x: (len(x[0]), x[1]))[0]
+        else:
+            summary = ""
+        
+        # 6. Average confidence (weighted by whether chunk found useful data)
+        weighted_confidences = []
+        for r in results:
+            weight = 1.0
+            if r.expiry_date:
+                weight += 0.5
+            if r.activation_date:
+                weight += 0.3
+            if r.extracted_fields:
+                weight += 0.2 * min(len(r.extracted_fields), 5) / 5
+            weighted_confidences.append(r.confidence * weight)
+        
+        avg_confidence = sum(weighted_confidences) / sum(
+            1 + (0.5 if r.expiry_date else 0) + (0.3 if r.activation_date else 0) + 
+            (0.2 * min(len(r.extracted_fields) if r.extracted_fields else 0, 5) / 5)
+            for r in results
+        )
+        
+        print(f"    [Merge] Combined {len(results)} chunks: {len(merged_fields)} fields, "
+              f"expiry={expiry_date}, activation={activation_date}")
+        
+        return DocumentExtraction(
+            document_type=document_type,
+            extracted_fields=merged_fields,
+            expiry_date=expiry_date,
+            activation_date=activation_date,
+            summary=summary,
+            confidence=min(avg_confidence, 1.0)
+        )
 
