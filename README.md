@@ -222,14 +222,43 @@ For large documents that exceed the LLM context window:
    - `confidence`: Weighted average
 
 
+## Project Structure
+
+**Root Files**
+- `manage.py` - Django entry point
+- `pyproject.toml` - Poetry dependencies
+- `.env.example` - Environment template
+
+**documents/pipeline.py** - Main Pipeline class that orchestrates loaders and LLM
+
+**documents/api/**
+- `urls.py` - API route definitions
+- `views.py` - REST endpoint for document upload
+
+**documents/loaders/**
+- `__init__.py` - LoaderFactory returns correct loader for file type
+- `base.py` - BaseLoader abstract class and ExtractionResult dataclass
+- `pdf_loader.py` - PDF text extraction with OCR fallback
+- `image_loader.py` - Image OCR using Tesseract
+- `text_loader.py` - Plain text file reader
+- `word_loader.py` - Word document reader
+
+**documents/llm/**
+- `__init__.py` - get_llm() returns Ollama or Groq based on config
+- `processor.py` - LLMProcessor handles chunking, extraction, and merging
+- `schema.py` - Pydantic schema for structured LLM output
+
+**documents/tests/**
+- `test_pipeline.py` - Pytest tests for pipeline
+
+**samples/** - Sample documents for testing (images, PDFs, text files)
+
 ## Known Limitations
 
 1. **Synchronous Processing**: API blocks during processing (async support planned)
 2. **No Authentication**: API is open (add auth for production)
 3. **OCR Language**: Currently English + Hindi only
 4. **File Size**: No explicit limits (add for production)
-
-
 
 ## License
 
